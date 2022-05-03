@@ -1,17 +1,6 @@
-import logo from "../../assets/Img/logo.png"
+import CartWidget from "../CartWidget/CartWidget"
 
 export default function Navbar(){
- 
-const container = {
-    width: "100%",
-    maxWidth: "1500px",
-    backgroundColor: "#e9e9e9",
-    borderRadius:"20px",
-    display:"flex",
-    justifyContent : "space-between",
-    alignItems: "center",
-    padding: "20px 20px",
-}
         
 const menu = {
     display : "flex",
@@ -24,21 +13,27 @@ const menu = {
 const link = {
     color:"#603813",
     fontFamily: "'Roboto', sans-serif",
-    fontSize: "22px",
+    fontSize: "24px",
     padding: "20px 20px",
     fontWeight: "bold"
 }
     return(
-        <header style = {container}>
+    <>
+        <header className="container">
             <div > 
-                <img src={logo} id="logo" alt="logo de la empresa" className="logo"/>
+                <img src="images/logo.png" id="logo" alt="logo de la empresa" className="logo"/>
             </div>
             <ul style={menu}>
-                <li style={link}>  Inicio </li>
+                <li style={link}> Inicio </li>
                 <li style={link}> Comprá Online </li>
                 <li style={link}> Nosotros </li>
+                <CartWidget count={8}/>
             </ul>
         </header>
+        <main>
+            
+        </main>  
+    </>
     );
 }
 
