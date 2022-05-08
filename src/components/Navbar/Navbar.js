@@ -1,13 +1,11 @@
 import CartWidget from "../CartWidget/CartWidget"
+import {Navbar, Container, Nav} from "react-bootstrap"
 
-export default function Navbar(){
+export default function NavBar(){
         
 const menu = {
-    display : "flex",
-    justifyContent : "space-around",
-    alignItems: "center",
-    flexWrap: "wrap",
-    listStyle: "none",
+    backgroundColor:"#efefef",
+    borderRadius: "25px"
 }  
 
 const link = {
@@ -17,23 +15,26 @@ const link = {
     padding: "20px 20px",
     fontWeight: "bold"
 }
+/* CREO EL HEADER DE LA PAGINA Y AGREGO EL CARRITO CREADO EN CARTWIDGET*/
     return(
-    <>
-        <header className="container">
-            <div > 
-                <img src="images/logo.png" id="logo" alt="logo de la empresa" className="logo"/>
-            </div>
-            <ul style={menu}>
-                <li style={link}> Inicio </li>
-                <li style={link}> Comprá Online </li>
-                <li style={link}> Nosotros </li>
+        <header style={menu}>
+            <Navbar expand="lg" >
+            <Container>
+                <div > 
+                    <img src="images/logo.png" id="logo" alt="logo de la empresa" className="logo"/>
+                </div>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                </Navbar.Collapse>
+                <Nav className="me-auto">
+                <Nav.Link href="#home" style={link}>Inicio</Nav.Link>
+                <Nav.Link href="#link" style={link}>Comprá Online</Nav.Link>
+                <Nav.Link href="#link" style={link}>Nosotros</Nav.Link>           
                 <CartWidget count={8}/>
-            </ul>
+            </Nav>
+            </Container>
+            </Navbar>
         </header>
-        <main>
-            
-        </main>  
-    </>
     );
 }
 
