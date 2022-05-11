@@ -51,6 +51,7 @@ export default function ItemCount({stock}) {
             icon: 'success',
             confirmButtonText: 'Aceptar'
           })
+        count = 0  
     }
 
     return(

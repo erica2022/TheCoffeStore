@@ -5,7 +5,8 @@ export default function NavBar(){
         
 const menu = {
     backgroundColor:"#efefef",
-    borderRadius: "25px"
+    borderRadius: "25px",
+    boxShadow: "rgba(0, 0, 0, 0.5) 0px 8px 16px"
 }  
 
 const link = {
