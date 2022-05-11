@@ -5,12 +5,13 @@
     scroll-behavior: smooth;
 }
 
-h1 {
+.title {
     color: #666666;
     text-align: center;
     font-family: 'Roboto', sans-serif;
     font-size: 22px;
     padding: 20px 20px;
+    margin-top: 30px;
 }
 
 .logo{
@@ -45,4 +46,11 @@ h1 {
     margin: 5px auto;
     border-radius: 5px;
     border: 0px;
+}
+
+.listPro {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
 }

@@ -28,11 +28,11 @@ const link = {
                 <Navbar.Collapse id="basic-navbar-nav">
                 </Navbar.Collapse>
                 <Nav className="me-auto">
-                <Nav.Link href="#home" style={link}>Inicio</Nav.Link>
-                <Nav.Link href="#link" style={link}>Comprá Online</Nav.Link>
-                <Nav.Link href="#link" style={link}>Nosotros</Nav.Link>           
-                <CartWidget count={8}/>
-            </Nav>
+                    <Nav.Link href="#home" style={link}>Inicio</Nav.Link>
+                    <Nav.Link href="#link" style={link}>Comprá Online</Nav.Link>
+                    <Nav.Link href="#link" style={link}>Nosotros</Nav.Link>           
+                    <CartWidget count={8}/>
+                </Nav>
             </Container>
             </Navbar>
         </header>

@@ -11,7 +11,7 @@ export default function ItemListContainer() {
     const loadProds = new Promise((resolve, rejected) => {
     setTimeout (() => {
         resolve(products);
-    },6000)
+    },2000)
 
     })
 
