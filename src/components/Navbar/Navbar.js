@@ -1,5 +1,6 @@
 import CartWidget from "../CartWidget/CartWidget"
-import {Navbar, Container, Nav} from "react-bootstrap"
+import {Navbar, Container, Nav, NavDropdown, } from "react-bootstrap"
+import { Link, NavLink } from "react-router-dom"
 
 export default function NavBar(){
         
@@ -12,27 +13,34 @@ const menu = {
 const link = {
     color:"#603813",
     fontFamily: "'Roboto', sans-serif",
-    fontSize: "24px",
+    fontSize: "22px",
     padding: "20px 20px",
-    fontWeight: "bold"
+    fontWeight: "bold",
+    display: "flex",
+    alignItems: "center"
 }
+
+
 /* CREO EL HEADER DE LA PAGINA Y AGREGO EL CARRITO CREADO EN CARTWIDGET*/
     return(
-        <header style={menu}>
+        <header>
             <Navbar expand="lg" >
-            <Container>
+            <Container style={menu}>
                 <div > 
-                    <img src="images/logo.png" id="logo" alt="logo de la empresa" className="logo"/>
+                <Nav.Link> <NavLink to ="/" style={link}><img src="images/logo.png" id="logo" alt="logo de la empresa" className="logo"/></NavLink></Nav.Link>
                 </div>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                </Navbar.Collapse>
-                <Nav className="me-auto">
-                    <Nav.Link href="#home" style={link}>Inicio</Nav.Link>
-                    <Nav.Link href="#link" style={link}>Comprá Online</Nav.Link>
-                    <Nav.Link href="#link" style={link}>Nosotros</Nav.Link>           
+                <Navbar.Collapse id="basic-navbar-nav" >
+                <Nav className="justify-content-end flex-grow-1 pe-3">
+                    <Nav.Link> <NavLink to ="/Products" style={link}> Comprá Online </NavLink></Nav.Link>
+                    <NavDropdown title="Intensidades" id="basic-nav-dropdown" style={link}>
+                        <NavDropdown.Item ><NavLink to ="/Category/suave" style={link}> Suave </NavLink></NavDropdown.Item>
+                        <NavDropdown.Item ><NavLink to ="/Category/fuerte" style={link}> Fuerte </NavLink></NavDropdown.Item>
+                    </NavDropdown>
+                    <Nav.Link> <NavLink to ="/Learn" style={link}> Aprendé </NavLink></Nav.Link> 
                     <CartWidget count={8}/>
                 </Nav>
+                </Navbar.Collapse>
             </Container>
             </Navbar>
         </header>
