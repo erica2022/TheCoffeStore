@@ -1,7 +1,15 @@
+import React from "react"
 import { Container, Card, Row, Col } from "react-bootstrap"
 import ItemCount from "../ItemCount/ItemCount"
+import { Context } from "../../context/Context"
+import AddButton from "../ItemCount/ItemCount"
+import { Link, NavLink } from "react-router-dom"
 
 export default function ItemDetail ({coffee}){
+
+    const [count, setCount ] = React.useState(1)
+    const {isInCart, addToCart} = React.useContext(Context)
+
     const img =
     {
         width: "50%",
@@ -21,13 +29,13 @@ export default function ItemDetail ({coffee}){
     return(
        <Container>
        <Row>         
-            <Col>
-            <Card border="light" style={{ width: '300', height: '300px', border: '0px solid #000000', margin:'30px'}}>
-            <Card.Img className="text-center" style={img} variant="top" src={coffee.img} alt={coffee.id}/>
-            </Card>                            
+            <Col sm={6}>
+                <Card border="light" style={{ height: '300px', border: '0px solid #000000', margin:'30px'}}>
+                <Card.Img className="text-center" style={img} variant="top" src={coffee.img} alt={coffee.id}/>
+                </Card>                            
             </Col>  
-            <Col>
-                <Card border="light" style={{ width: '500', height: '400px', border: '0px solid #000000', margin:'30px'}}>                                
+            <Col sm={6}>
+                <Card border="light" style={{ height: '400px', border: '0px solid #000000', margin:'30px'}}>                                
                 <Card.Body>
                 <Card.Title style={titleCard}>{coffee.title}</Card.Title>
                     <Card.Text> 
@@ -35,7 +43,16 @@ export default function ItemDetail ({coffee}){
                         <p className="textCard"><b>Stock:</b> {coffee.stock}</p>
                         <p className="textCard"><b>Precio:</b> {coffee.price}</p>
                     </Card.Text>
-                    <ItemCount stock = {coffee.stock}/>
+                    {isInCart(coffee.id) 
+                        ? (<NavLink to ="/cart"><button className="addDetail"> Ir al carrito</button></NavLink>) 
+                        : <AddButton
+                            onSubmit={() => addToCart(coffee, count)}
+                            count={count}
+                            setCount={setCount}
+                            stock={coffee.stock}
+                          />
+                    }
+              
                 </Card.Body>
                 </Card>                  
             </Col>   

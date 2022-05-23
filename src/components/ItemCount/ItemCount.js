@@ -1,13 +1,12 @@
 import React from "react"
 import { Row, Col, Container } from "react-bootstrap";
 import {toast} from "react-toastify"
+import { Button } from "react-bootstrap"
 import Swal from 'sweetalert2'
 
 /* ESTA FUNCION CONTIENE LOS BOTONES PARA SUMAR O SACAR PRODUCTOS DEL CARRITO Y AGREGARLOS */
-export default function ItemCount({stock}) {
-
-    const [count, setCount ] = React.useState(1)
-      
+export default function ItemCount({stock, count, setCount, onSubmit}) {
+   
     const StockButtons = ({handle , text}) => {
         return <button className="add" onClick={handle}> { text } </button> 
     };
@@ -29,6 +28,7 @@ export default function ItemCount({stock}) {
                 });
         }
     }
+
 /* RESTA PRODUTOS */
     const onDecrease =() => {
         if(count > 1) {setCount(count-1) } else {
@@ -44,15 +44,9 @@ export default function ItemCount({stock}) {
         }
     }
 /* AGREGA LOS PRODUCTOS AL CARRITO */
-    const addCart =() => {
-        Swal.fire({
-            title: '¡Felicitaciones!',
-            text: 'Has agregado el producto al carrito.',
-            icon: 'success',
-            confirmButtonText: 'Aceptar'
-          })
-          setCount(1)  
-    }
+    const AddButton = ({handleOnSubmit}) => {
+    return <button className="addDetail" onClick={() => handleOnSubmit()}>Añadir al carrito</button>;
+  };
 
     return(
         <Container>
@@ -64,7 +58,7 @@ export default function ItemCount({stock}) {
                 </Col>
             </Row>
             <Row>
-                <StockButtons text="Agregar al carrito" handle={addCart}/>
+                <AddButton handleOnSubmit={onSubmit} />
             </Row>
         </Container>
     );

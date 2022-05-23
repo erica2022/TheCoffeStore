@@ -1,13 +1,10 @@
-import ItemCount from "../ItemCount/ItemCount"
-import { Card, Nav, Row, Col } from "react-bootstrap"
-import ItemDetail from "../ItemDetail/ItemDetail"
-import { Link, NavLink } from "react-router-dom"
+import { Card} from "react-bootstrap"
+import { NavLink } from "react-router-dom"
 import React from "react"
 
 /* CARD CON EL PRODUCTO Y LOS BOTONES DEL ITEMCOUNT*/
 export default function Item ({product}) {
-    const img =
-    {
+    const img = {
         width: "50%",
         padding: "10px 10px",
         margin: "0 auto"
@@ -31,7 +28,7 @@ export default function Item ({product}) {
                 <Card.Text className="text-center"> 
                     <p>Precio: {product.price}</p>
                 </Card.Text>
-                <Nav.Link > <NavLink to={`/detail/${product.id}`} style={link}> Ver detalle </NavLink> </Nav.Link>
+                <NavLink to ={`/detail/${product.id}`}><button className="addDetail"> Ver detalle </button></NavLink> 
             </Card.Body>
         </Card>
     )
