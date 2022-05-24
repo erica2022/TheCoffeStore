@@ -12,9 +12,9 @@ import {CartProvider} from "./context/Context"
 function App() {
   return ( 
     <> 
-    <BrowserRouter>
-      <NavBar/>
+    <BrowserRouter>    
       <CartProvider>      
+        <NavBar/>
         <Routes>
           <Route exact path="/" element={<Products/>}/>
           <Route exact path="/products" element={<Products/>}/>

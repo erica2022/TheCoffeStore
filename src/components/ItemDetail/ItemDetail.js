@@ -7,8 +7,8 @@ import { Link, NavLink } from "react-router-dom"
 
 export default function ItemDetail ({coffee}){
 
-    const [count, setCount ] = React.useState(1)
-    const {isInCart, addToCart} = React.useContext(Context)
+    const [count, setCount] = React.useState(1)
+    const {isInCart, addItem, removeItem} = React.useContext(Context)
 
     const img =
     {
@@ -27,7 +27,7 @@ export default function ItemDetail ({coffee}){
     }
 
     return(
-       <Container>
+    <Container>
        <Row>         
             <Col sm={6}>
                 <Card border="light" style={{ height: '300px', border: '0px solid #000000', margin:'30px'}}>
@@ -46,18 +46,19 @@ export default function ItemDetail ({coffee}){
                     {isInCart(coffee.id) 
                         ? (<NavLink to ="/cart"><button className="addDetail"> Ir al carrito</button></NavLink>) 
                         : <AddButton
-                            onSubmit={() => addToCart(coffee, count)}
+                            onSubmit={() => addItem(coffee, count)}
                             count={count}
                             setCount={setCount}
                             stock={coffee.stock}
                           />
                     }
-              
+                    {isInCart(coffee.id) 
+                        ? <button onClick={() => removeItem(coffee.id)} className="addDetail"> Eliminar </button>
+                        : ''}
                 </Card.Body>
                 </Card>                  
             </Col>   
         </Row> 
- 
-        </Container>
+    </Container>
     )
 }
