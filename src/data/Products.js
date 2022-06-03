@@ -1,7 +1,7 @@
 export const products = [
     {
         id: 1,
-        img:"/images/blend.jpg", 
+        img:"http://localhost:3000/images/blend.jpg", 
         stock:20, 
         price:1200, 
         title:"CAFÉ BLEND DE LA CASA TOSTADO", 
@@ -10,7 +10,7 @@ export const products = [
     },
     {
         id: 2,
-        img:"/images/brasil.png",
+        img:"http://localhost:3000/images/brasil.png",
         stock:20,
         price:990, 
         title:"CAFÉ DE BRASIL TOSTADO", 
@@ -19,7 +19,7 @@ export const products = [
     },
     {
         id: 3,
-        img:"/images/colombia.png",
+        img:"http://localhost:3000/images/colombia.png",
         stock:12,
         price:1390,
         title:"CAFÉ DE COLOMBIA. BOURBÓN ROSADO.",
@@ -28,7 +28,7 @@ export const products = [
     },
     {
         id: 4,
-        img:"/images/etiopia.png",
+        img:"http://localhost:3000/images/etiopia.png",
         stock:8,
         price:1690,
         title:"CAFÉ DE ETIOPÍA. GUJI. NATURAL.",
@@ -37,7 +37,7 @@ export const products = [
     },
     {
         id: 5,
-        img:"/images/nicaragua.png",
+        img:"http://localhost:3000/images/nicaragua.png",
         stock:8,
         price:1290,
         title:"CAFÉ DE NICARAGUA. BOURBÓN ROJO ANAERÓBICO.",
@@ -46,7 +46,7 @@ export const products = [
     },
     {
         id: 6,
-        img:"/images/peru.png",
+        img:"http://localhost:3000/images/peru.png",
         stock:14,
         price:1420,
         title:"CAFÉ DE PERÚ NATURAL.",

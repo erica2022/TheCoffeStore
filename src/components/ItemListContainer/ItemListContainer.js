@@ -3,7 +3,7 @@ import { products } from "../../data/Products"
 import ItemList from "../ItemList/ItemList"
 
 /*  ACA IRIA LA LISTA DE PRODUCTOS QUE CREE EN ITEM*/
-export default function ItemListContainer({catId, title}) {
+export default function ItemListContainer({catId}) {
 /*  PROMESA
     const [ListProd, SetListProd] = React.useState([])
 
@@ -21,6 +21,7 @@ export default function ItemListContainer({catId, title}) {
     },[])*/
 
     const [items, setItems] = React.useState([])
+
     React.useEffect(()=> {
         if (catId) { setItems(products.filter(item => item.productId === catId))}
         else {setItems (products)}
@@ -28,6 +29,6 @@ export default function ItemListContainer({catId, title}) {
 
 
   return(
-      <ItemList ListProd={items}/>
+       <ItemList ListProd={items}/>
   );
 }
