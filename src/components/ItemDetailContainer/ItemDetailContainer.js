@@ -1,17 +1,23 @@
 import React from "react";
 import Coffee from "../ItemDetail/ItemDetail";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import { products } from "../../data/Products";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
 import Item from "../Item/Item";
 
 export default function ItemDetailContainer ({ detailId }) {
-    const [item, setItem] = React.useState ([])
+    const [item, setItem] = React.useState ({})
 
     React.useEffect(() => {
-      setItem(products.find(item => item.id === +detailId));
+      const db = getFirestore()
+      const prod = doc(db,"productos", detailId)
+      getDoc(prod).then ((snapshot) => {
+        console.log(snapshot)
+        setItem ({id: snapshot.id, ...snapshot.data()})
+        
+      })
     }, [detailId]);
-
-
+console.log("item")  
+ console.log(item)
     return(
         <ItemDetail coffee={item}/>
     )
