@@ -12,8 +12,6 @@ export default function ItemListContainer({catId}) {
     React.useEffect(() => {
         
         const db = getFirestore()
-        const productRef = doc(db,"productos", "BFlBIFGgK6FKf7xZsg1z")   //NOMBRE DE LA COLECCIÓN EN FIRESTORE
-
         if(catId){
             const res = query(
                 collection(db, "productos"), 
