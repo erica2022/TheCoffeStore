@@ -27,7 +27,7 @@ export default function CheckOut () {
         console.log(newOrder)       
         const order = {
           buyer: data,
-          items: newOrder,
+          items: coffeeCart,
           total: total(),
         };
       
