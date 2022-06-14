@@ -5,7 +5,6 @@ import {Context} from "../../context/Context"
 
 export default function CartItem ({product})  {
 const {coffeeCart, removeItem} = React.useContext(Context)
-const [item, setItem] = React.useState ([])
 
 const img =
 {

@@ -50,7 +50,7 @@ export default function ItemDetail ({coffee}){
                             setCount={setCount}
                             stock={coffee.stock}
                           />)
-                        : (<NavLink to ="/cart"><button className="addDetail"> Terminar mi compra </button></NavLink>)
+                        : (<div className="text-center"><NavLink to ="/cart"><button className="addDetail"> Ir al carrito </button></NavLink> </div>)
                     }
                 </Card.Body>
                 </Card>                  

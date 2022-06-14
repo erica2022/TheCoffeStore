@@ -7,9 +7,12 @@ import Category from "./views/Category/Category"
 import Detail from "./views/Detail/Detail";
 import ShopCart from "./views/ShopCart/ShopCart"
 import {CartProvider} from "./context/Context"
+import CheckOut from "./components/CheckOut/CheckOut";
+
 
 
 function App() {
+
   return ( 
     <> 
     <BrowserRouter>    
@@ -22,17 +25,13 @@ function App() {
           <Route exact path="/item/:itemId" element={<Item/>}/>   
           <Route exact path="/category/:catId" element={<Category/>}/> 
           <Route exact path="/detail/:detailId" element={<Detail/>}/> 
-          <Route exact path="/cart" element={<ShopCart/>} />            
+          <Route exact path="/cart" element={<ShopCart/>} />  
+          <Route exact path="/CheckOut" element ={<CheckOut/>} />          
         </Routes>
       </CartProvider>
     </BrowserRouter>
-    </>
-    /*
-    <div className="App">
-      <NavBar/>
-
-    </div>*/
-  );
+   </>
+   );
 }
 
 

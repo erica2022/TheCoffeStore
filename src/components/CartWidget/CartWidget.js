@@ -9,7 +9,6 @@ export default function CartWidget () {
 const {items, coffeeCart} = React.useContext(Context)       
 
     return (
-
             (coffeeCart.length>0) && 
             ( <div className="text"><Link to = "/cart"><img src="/images/canasta.png" alt="Carrito de compras"/> </Link>
                 {items()}</div>
