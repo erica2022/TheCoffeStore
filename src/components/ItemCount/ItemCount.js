@@ -1,8 +1,8 @@
 import React from "react"
 import { Row, Col, Container } from "react-bootstrap";
 import {toast} from "react-toastify"
+import Buttons from "../Buttons/Buttons"
 import { Button } from "react-bootstrap"
-import Swal from 'sweetalert2'
 
 /* ESTA FUNCION CONTIENE LOS BOTONES PARA SUMAR O SACAR PRODUCTOS DEL CARRITO Y AGREGARLOS */
 export default function ItemCount({stock, count, setCount, onSubmit}) {
@@ -43,22 +43,22 @@ export default function ItemCount({stock, count, setCount, onSubmit}) {
                 });
         }
     }
-/* AGREGA LOS PRODUCTOS AL CARRITO */
+/* AGREGA LOS PRODUCTOS AL CARRITO 
     const AddButton = ({handleOnSubmit}) => {
     return <button className="addDetail" onClick={() => handleOnSubmit()}>Añadir al carrito</button>;
-  };
+  };*/
 
     return(
         <Container>
             <Row > 
                 <Col className="text-center"> 
-                    <StockButtons text="+" handle={onAdd}/>
+                    <Buttons text={"+"} handle={onAdd} style={"add"} />
                     <span> {count} </span> 
-                    <StockButtons text="-" handle={onDecrease}/>
+                    <Buttons text={"-"} handle={onDecrease} style={"add"} />
                 </Col>
             </Row>
             <Row>
-                <AddButton handleOnSubmit={onSubmit} />
+                <Buttons text={"Añadir al carrito"} handle={onSubmit} style={"addDetail"} />
             </Row>
         </Container>
     );

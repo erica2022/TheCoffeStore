@@ -4,6 +4,7 @@ import ItemCount from "../ItemCount/ItemCount"
 import { Context } from "../../context/Context"
 import AddButton from "../ItemCount/ItemCount"
 import { Link, NavLink } from "react-router-dom"
+import Buttons from "../Buttons/Buttons"
 
 export default function ItemDetail ({coffee}){
 
@@ -50,7 +51,7 @@ export default function ItemDetail ({coffee}){
                             setCount={setCount}
                             stock={coffee.stock}
                           />)
-                        : (<div className="text-center"><NavLink to ="/cart"><button className="addDetail"> Ir al carrito </button></NavLink> </div>)
+                        : (<div className="text-center"><NavLink to ="/cart"><Buttons text= {"Ir al carrito"} style={"addDetail"}/></NavLink> </div>)
                     }
                 </Card.Body>
                 </Card>                  
