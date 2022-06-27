@@ -23,8 +23,8 @@ export default function CheckOut () {
     const handleChange = (event) => {
         const { name, value } = event.target;       
         setData({ ...data, [name]: value });  
-             
-        console.log(equal)
+        Equal()
+        console.log(equal)             
     }
     
     React.useEffect(() => {
@@ -53,8 +53,7 @@ export default function CheckOut () {
         })
         console.log(data.email) 
         console.log(data.email2)
-        Equal()
-        console.log(equal)
+
       }
 
     const updateProducts = async () => {
