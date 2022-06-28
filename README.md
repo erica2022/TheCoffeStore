@@ -21,4 +21,4 @@ Finalmente, cuando estes conforme con tu pedido, podrás proceder a realizar una
 <h2>Repositorio</h2>
 <p>https://the-coffee-store.vercel.app/](https://github.com/erica2022/TheCoffeStore.git</P>
 
-![image](https://the-coffee-store.vercel.app/)
+![image]https://github.com/erica2022/TheCoffeStore/blob/main/Uso%20de%20la%20App.gif
