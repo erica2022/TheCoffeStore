@@ -8,7 +8,7 @@ return(
     <Container>
         <h1 className="title">FINALIZAR COMPRA</h1>
         <div class="col-6" >
-        <Form >
+        <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formBasicEmail">
         <Form.Label >Nombre:</Form.Label>
         <Form.Control type="text" placeholder="Nombre" name="name" onChange={handleChange}/>        
@@ -18,7 +18,7 @@ return(
         <Form.Control type="email" placeholder="Correo electrónico" name="email2" onChange={handleChange} />
         <Form.Label style={{ marginTop:'20px'}}>Teléfono:</Form.Label>
         <Form.Control type="phone" placeholder="Teléfono" name="phone" onChange={handleChange}/>
-        <Button style={{ marginTop:'30px'}} type="submit" variant="secondary" onSubmit={handleSubmit}>Finalizar compra</Button>
+        <Button style={{ marginTop:'30px'}} type="submit" variant="secondary"  disabled={value}>Finalizar compra</Button>
         </Form.Group>
         </Form>
         </div>                 

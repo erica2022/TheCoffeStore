@@ -3,7 +3,6 @@ import CartItem from "../CartItem/CartItem"
 import {Container} from "react-bootstrap"
 import { NavLink } from "react-router-dom"
 import { Context } from "../../context/Context"
-import { clear } from "@testing-library/user-event/dist/clear"
 import Buttons from "../Buttons/Buttons"
 
 export default function Cart () {

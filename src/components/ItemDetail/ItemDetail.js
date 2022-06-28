@@ -3,14 +3,14 @@ import { Container, Card, Row, Col } from "react-bootstrap"
 import ItemCount from "../ItemCount/ItemCount"
 import { Context } from "../../context/Context"
 import AddButton from "../ItemCount/ItemCount"
-import { Link, NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import Buttons from "../Buttons/Buttons"
 
 export default function ItemDetail ({coffee}){
 
     const [count, setCount] = React.useState(1)
-    const {isInCart, addItem, removeItem} = React.useContext(Context)
-
+    const {isInCart, addItem,} = React.useContext(Context)
+    console.log(coffee)
     const img =
     {
         width: "50%",
